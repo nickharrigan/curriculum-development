@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 The lesson life-cycle | The Carpentries Curriculum Development Handbook</title>
+  <meta name="description" content="This is a work in progress of the curriculum development handbook for The Carpentries." />
+  <meta name="generator" content="bookdown 0.11.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 The lesson life-cycle | The Carpentries Curriculum Development Handbook" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a work in progress of the curriculum development handbook for The Carpentries." />
+  <meta name="github-repo" content="carpentries/curriculum-development" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 The lesson life-cycle | The Carpentries Curriculum Development Handbook" />
+  
+  <meta name="twitter:description" content="This is a work in progress of the curriculum development handbook for The Carpentries." />
+  
+
+<meta name="author" content="Erin Becker and François Michonneau" />
+
+
+<meta name="date" content="2019-06-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="technological-introductions.html">
+<link rel="next" href="pilots-and-feedback.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Curriculum Development Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="conceptual-elements.html"><a href="conceptual-elements.html"><i class="fa fa-check"></i><b>1</b> Conceptual elements</a><ul>
+<li class="chapter" data-level="1.1" data-path="conceptual-elements.html"><a href="conceptual-elements.html#the-carpentries-mindset-for-curriculum-development"><i class="fa fa-check"></i><b>1.1</b> The Carpentries mindset for curriculum development</a></li>
+<li class="chapter" data-level="1.2" data-path="conceptual-elements.html"><a href="conceptual-elements.html#backward-design"><i class="fa fa-check"></i><b>1.2</b> Backward design</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="conceptual-elements.html"><a href="conceptual-elements.html#identifying-the-practical-skills"><i class="fa fa-check"></i><b>1.2.1</b> Identifying the practical skills</a></li>
+<li class="chapter" data-level="1.2.2" data-path="conceptual-elements.html"><a href="conceptual-elements.html#designing-challenges-to-assess-understanding"><i class="fa fa-check"></i><b>1.2.2</b> Designing challenges to assess understanding</a></li>
+<li class="chapter" data-level="1.2.3" data-path="conceptual-elements.html"><a href="conceptual-elements.html#planning-the-content-of-the-lesson"><i class="fa fa-check"></i><b>1.2.3</b> Planning the content of the lesson</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="conceptual-elements.html"><a href="conceptual-elements.html#creating-a-narrative-and-selecting-a-dataset"><i class="fa fa-check"></i><b>1.3</b> Creating a narrative and selecting a dataset</a></li>
+<li class="chapter" data-level="1.4" data-path="conceptual-elements.html"><a href="conceptual-elements.html#limitations-of-our-approach"><i class="fa fa-check"></i><b>1.4</b> Limitations of our approach</a></li>
+<li class="chapter" data-level="1.5" data-path="conceptual-elements.html"><a href="conceptual-elements.html#the-structure-of-our-curriculum"><i class="fa fa-check"></i><b>1.5</b> The structure of our curriculum</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="conceptual-elements.html"><a href="conceptual-elements.html#the-elements-of-the-carpentries-curriculum"><i class="fa fa-check"></i><b>1.5.1</b> The elements of The Carpentries curriculum</a></li>
+<li class="chapter" data-level="1.5.2" data-path="conceptual-elements.html"><a href="conceptual-elements.html#the-i-we-you-model"><i class="fa fa-check"></i><b>1.5.2</b> The I-We-You model</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="conceptual-elements.html"><a href="conceptual-elements.html#collaborative-lesson-design"><i class="fa fa-check"></i><b>1.6</b> Collaborative lesson design</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="deciding-what-to-teach.html"><a href="deciding-what-to-teach.html"><i class="fa fa-check"></i><b>2</b> Deciding what to teach</a><ul>
+<li class="chapter" data-level="2.1" data-path="deciding-what-to-teach.html"><a href="deciding-what-to-teach.html#target-audience"><i class="fa fa-check"></i><b>2.1</b> Target audience</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="deciding-what-to-teach.html"><a href="deciding-what-to-teach.html#audience-definition-questions"><i class="fa fa-check"></i><b>2.1.1</b> Audience definition questions</a></li>
+<li class="chapter" data-level="2.1.2" data-path="deciding-what-to-teach.html"><a href="deciding-what-to-teach.html#learner-profiles"><i class="fa fa-check"></i><b>2.1.2</b> Learner profiles</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="deciding-what-to-teach.html"><a href="deciding-what-to-teach.html#skills-list"><i class="fa fa-check"></i><b>2.2</b> Skills list</a></li>
+<li class="chapter" data-level="2.3" data-path="deciding-what-to-teach.html"><a href="deciding-what-to-teach.html#example-using-a-software-carpentry-learner-profile"><i class="fa fa-check"></i><b>2.3</b> Example using a Software Carpentry Learner Profile</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="designing-challenges.html"><a href="designing-challenges.html"><i class="fa fa-check"></i><b>3</b> Designing challenges</a><ul>
+<li class="chapter" data-level="3.1" data-path="designing-challenges.html"><a href="designing-challenges.html#picking-a-dataset"><i class="fa fa-check"></i><b>3.1</b> Picking a dataset</a></li>
+<li class="chapter" data-level="3.2" data-path="designing-challenges.html"><a href="designing-challenges.html#formatting-the-dataset-for-teaching"><i class="fa fa-check"></i><b>3.2</b> Formatting the dataset for teaching</a></li>
+<li class="chapter" data-level="3.3" data-path="designing-challenges.html"><a href="designing-challenges.html#designing-challenges-1"><i class="fa fa-check"></i><b>3.3</b> Designing challenges</a></li>
+<li class="chapter" data-level="3.4" data-path="designing-challenges.html"><a href="designing-challenges.html#different-types-of-challenges"><i class="fa fa-check"></i><b>3.4</b> Different types of challenges</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="designing-challenges.html"><a href="designing-challenges.html#multiple-choice-questions"><i class="fa fa-check"></i><b>3.4.1</b> Multiple Choice Questions</a></li>
+<li class="chapter" data-level="3.4.2" data-path="designing-challenges.html"><a href="designing-challenges.html#parsons-problems"><i class="fa fa-check"></i><b>3.4.2</b> Parson’s problems</a></li>
+<li class="chapter" data-level="3.4.3" data-path="designing-challenges.html"><a href="designing-challenges.html#fill-in-the-blank-problems"><i class="fa fa-check"></i><b>3.4.3</b> Fill-in-the-blank problems</a></li>
+<li class="chapter" data-level="3.4.4" data-path="designing-challenges.html"><a href="designing-challenges.html#use-the-concept-in-a-different-context"><i class="fa fa-check"></i><b>3.4.4</b> Use the concept in a different context</a></li>
+<li class="chapter" data-level="3.4.5" data-path="designing-challenges.html"><a href="designing-challenges.html#switch-the-dataset"><i class="fa fa-check"></i><b>3.4.5</b> Switch the dataset</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="developing-content.html"><a href="developing-content.html"><i class="fa fa-check"></i><b>4</b> Developing content</a><ul>
+<li class="chapter" data-level="4.1" data-path="developing-content.html"><a href="developing-content.html#fundamental-elements"><i class="fa fa-check"></i><b>4.1</b> Fundamental elements</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="developing-content.html"><a href="developing-content.html#code-chunks"><i class="fa fa-check"></i><b>4.1.1</b> Code chunks</a></li>
+<li class="chapter" data-level="4.1.2" data-path="developing-content.html"><a href="developing-content.html#narrative-text"><i class="fa fa-check"></i><b>4.1.2</b> Narrative text</a></li>
+<li class="chapter" data-level="4.1.3" data-path="developing-content.html"><a href="developing-content.html#considering-cognitive-load"><i class="fa fa-check"></i><b>4.1.3</b> Considering cognitive load</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="developing-content.html"><a href="developing-content.html#supporting-elements"><i class="fa fa-check"></i><b>4.2</b> Supporting elements</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="developing-content.html"><a href="developing-content.html#learning-objectives"><i class="fa fa-check"></i><b>4.2.1</b> Learning objectives</a></li>
+<li class="chapter" data-level="4.2.2" data-path="developing-content.html"><a href="developing-content.html#key-points"><i class="fa fa-check"></i><b>4.2.2</b> Key points</a></li>
+<li class="chapter" data-level="4.2.3" data-path="developing-content.html"><a href="developing-content.html#framing-questions"><i class="fa fa-check"></i><b>4.2.3</b> Framing questions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="community-development.html"><a href="community-development.html"><i class="fa fa-check"></i><b>5</b> Community development</a><ul>
+<li class="chapter" data-level="5.1" data-path="community-development.html"><a href="community-development.html#roles"><i class="fa fa-check"></i><b>5.1</b> Roles</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="community-development.html"><a href="community-development.html#lesson-authors"><i class="fa fa-check"></i><b>5.1.1</b> Lesson Authors</a></li>
+<li class="chapter" data-level="5.1.2" data-path="community-development.html"><a href="community-development.html#reviewers"><i class="fa fa-check"></i><b>5.1.2</b> Reviewers</a></li>
+<li class="chapter" data-level="5.1.3" data-path="community-development.html"><a href="community-development.html#lesson-maintainers"><i class="fa fa-check"></i><b>5.1.3</b> Lesson Maintainers</a></li>
+<li class="chapter" data-level="5.1.4" data-path="community-development.html"><a href="community-development.html#curriculum-advisors"><i class="fa fa-check"></i><b>5.1.4</b> Curriculum Advisors</a></li>
+<li class="chapter" data-level="5.1.5" data-path="community-development.html"><a href="community-development.html#beta-pilot-instructors"><i class="fa fa-check"></i><b>5.1.5</b> Beta Pilot Instructors</a></li>
+<li class="chapter" data-level="5.1.6" data-path="community-development.html"><a href="community-development.html#instructors"><i class="fa fa-check"></i><b>5.1.6</b> Instructors</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="technological-introductions.html"><a href="technological-introductions.html"><i class="fa fa-check"></i><b>6</b> Technological introductions</a><ul>
+<li class="chapter" data-level="6.1" data-path="technological-introductions.html"><a href="technological-introductions.html#lesson-hosting-and-rendering"><i class="fa fa-check"></i><b>6.1</b> Lesson hosting and rendering</a></li>
+<li class="chapter" data-level="6.2" data-path="technological-introductions.html"><a href="technological-introductions.html#using-the-lesson-template"><i class="fa fa-check"></i><b>6.2</b> Using the lesson template</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="technological-introductions.html"><a href="technological-introductions.html#lesson-homepage"><i class="fa fa-check"></i><b>6.2.1</b> Lesson homepage</a></li>
+<li class="chapter" data-level="6.2.2" data-path="technological-introductions.html"><a href="technological-introductions.html#episode-files"><i class="fa fa-check"></i><b>6.2.2</b> Episode files</a></li>
+<li class="chapter" data-level="6.2.3" data-path="technological-introductions.html"><a href="technological-introductions.html#extras"><i class="fa fa-check"></i><b>6.2.3</b> Extras</a></li>
+<li class="chapter" data-level="6.2.4" data-path="technological-introductions.html"><a href="technological-introductions.html#other-information"><i class="fa fa-check"></i><b>6.2.4</b> Other information</a></li>
+<li class="chapter" data-level="6.2.5" data-path="technological-introductions.html"><a href="technological-introductions.html#special-notes-on-rmarkdown"><i class="fa fa-check"></i><b>6.2.5</b> Special notes on RMarkdown</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="technological-introductions.html"><a href="technological-introductions.html#working-on-github"><i class="fa fa-check"></i><b>6.3</b> Working on GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="the-lesson-life-cycle.html"><a href="the-lesson-life-cycle.html"><i class="fa fa-check"></i><b>7</b> The lesson life-cycle</a><ul>
+<li class="chapter" data-level="7.1" data-path="the-lesson-life-cycle.html"><a href="the-lesson-life-cycle.html#overview"><i class="fa fa-check"></i><b>7.1</b> Overview</a></li>
+<li class="chapter" data-level="7.2" data-path="the-lesson-life-cycle.html"><a href="the-lesson-life-cycle.html#pathway-for-community-developed-lessons"><i class="fa fa-check"></i><b>7.2</b> Pathway for community-developed lessons</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="the-lesson-life-cycle.html"><a href="the-lesson-life-cycle.html#the-blueprint-lesson-proposal"><i class="fa fa-check"></i><b>7.2.1</b> The blueprint (lesson proposal)</a></li>
+<li class="chapter" data-level="7.2.2" data-path="the-lesson-life-cycle.html"><a href="the-lesson-life-cycle.html#the-assembly-early-development-pre-alpha"><i class="fa fa-check"></i><b>7.2.2</b> The assembly (Early development, “Pre-Alpha”)</a></li>
+<li class="chapter" data-level="7.2.3" data-path="the-lesson-life-cycle.html"><a href="the-lesson-life-cycle.html#the-sanding-field-test-alpha"><i class="fa fa-check"></i><b>7.2.3</b> The sanding (field test, “Alpha”)</a></li>
+<li class="chapter" data-level="7.2.4" data-path="the-lesson-life-cycle.html"><a href="the-lesson-life-cycle.html#the-polishing-beta"><i class="fa fa-check"></i><b>7.2.4</b> The polishing (“Beta”)</a></li>
+<li class="chapter" data-level="7.2.5" data-path="the-lesson-life-cycle.html"><a href="the-lesson-life-cycle.html#the-stable-lesson"><i class="fa fa-check"></i><b>7.2.5</b> The stable lesson</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="pilots-and-feedback.html"><a href="pilots-and-feedback.html"><i class="fa fa-check"></i><b>8</b> Pilots and Feedback</a></li>
+<li class="chapter" data-level="9" data-path="from-pre-release-to-stable.html"><a href="from-pre-release-to-stable.html"><i class="fa fa-check"></i><b>9</b> From pre-release to stable</a></li>
+<li class="chapter" data-level="10" data-path="maintenance.html"><a href="maintenance.html"><i class="fa fa-check"></i><b>10</b> Maintenance</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="the-lesson-proposal.html"><a href="the-lesson-proposal.html"><i class="fa fa-check"></i><b>A</b> The Lesson Proposal</a><ul>
+<li class="chapter" data-level="A.1" data-path="the-lesson-proposal.html"><a href="the-lesson-proposal.html#for-all-lessons"><i class="fa fa-check"></i><b>A.1</b> For all lessons</a></li>
+<li class="chapter" data-level="A.2" data-path="the-lesson-proposal.html"><a href="the-lesson-proposal.html#for-grant-supported-lessons"><i class="fa fa-check"></i><b>A.2</b> For Grant-Supported lessons</a></li>
+<li class="chapter" data-level="A.3" data-path="the-lesson-proposal.html"><a href="the-lesson-proposal.html#transition-to-officially-supported-lesson"><i class="fa fa-check"></i><b>A.3</b> Transition to officially supported lesson</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">The Carpentries Curriculum Development Handbook</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-lesson-life-cycle" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> The lesson life-cycle</h1>
+<ul>
+<li>Definitions of alpha, beta, 1.0
+<ul>
+<li>Alpha: The stage that it is in the first time it is taught. (in house)</li>
+<li>Beta: The stage that it is in after the pilots and clean-up. (wider community)</li>
+<li>pre-release: The stage that it is in after initial publication. (anyone)</li>
+<li>stable:</li>
+</ul></li>
+<li>Announcements
+<ul>
+<li>letting the community know that the lesson is being prepared for release and what that means</li>
+<li>Advertising for Bug BBQ</li>
+</ul></li>
+<li>Bug BBQ
+<ul>
+<li>How to organize for, how to schedule</li>
+<li>Communications (when and how to announce)</li>
+<li>Prep (communicating with maintainers about the process)</li>
+<li>Facilitating communications during the actual event (real time communications, issue assignments, avoiding duplication of work)</li>
+<li>Clean-up (maintainers, staff, authors)
+<ul>
+<li>Lesson release checklist</li>
+</ul></li>
+</ul></li>
+<li>Pre-Release Release</li>
+<li>How to communicate about a release</li>
+<li>How to do the release in Zenodo</li>
+<li>Move on website to different category</li>
+</ul>
+<hr />
+<div id="overview" class="section level2">
+<h2><span class="header-section-number">7.1</span> Overview</h2>
+<ul>
+<li>Community-developed lessons</li>
+<li>Lessons with grant support</li>
+</ul>
+</div>
+<div id="pathway-for-community-developed-lessons" class="section level2">
+<h2><span class="header-section-number">7.2</span> Pathway for community-developed lessons</h2>
+<div class="figure">
+<img src="figures/release_timeline.svg" alt="Overview of the lesson release timeline" />
+<p class="caption">Overview of the lesson release timeline</p>
+</div>
+<p>If you have an idea for a lesson that would be a good fit for The Carpentries, you first need to check if there are not already existing efforts to develop lessons on the same topic that you could join. The first draft (Pre-Alpha) of a lesson is usally written by an individual or a small group of people. From this first draft, the original authors organize a pilot workshop, and improve the content of the lessons based on the feedback from learners and co-instructors. They go through this iterative process a few times to bring the lesson where it is ready to be peer-reviewed by members of The Carpentries. After that, the lesson should be developed enough that people not involved in initial development efforts can teach it and contribute to it (Beta). After about six months in this stage, the lesson is mature enough and documented enough so that anyone interested can teach it and is officially released.</p>
+<p>The Pre-Alpha and Alpha development stages should focus on the content of the lesson: What to teach? How to teach it (which exercises, in which order should the concepts be introduced)? In the Beta stage, development efforts should focus on documenting the lesson, so that any Instructor familiar with the concepts covered in the lesson can understand the design of the lesson.</p>
+<div id="the-blueprint-lesson-proposal" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> The blueprint (lesson proposal)</h3>
+<p>If you have an idea for a lesson you think would be appropriate for The Carpentries, submit a proposal to the <a href="https://github.com/carpentrieslab/proposals"><code>proposals</code></a> repository in the Carpentries Lab organization following our template. The Curriculum Development Team will assess the fit of the proposed lesson, check for possible overlap with other efforts, and assign an Editor. If you have questions before submitting your proposal you may contact <a href="mailto:curriculum@carpentries.org">the Curriculum Development Team</a>.</p>
+<p>The Curriculum Development Team and the Editor will work with you on your proposal. Once your proposal is accepted, we will publish the revised version of your proposal on The Carpentries websites. Community members who wish to join the proposal or support it in other ways will be able do so.</p>
+<p>The Editor for your lesson will provide guidance during the lesson development process, answer questions that may arise during the development, and coordinate the review process for your lesson.</p>
+</div>
+<div id="the-assembly-early-development-pre-alpha" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> The assembly (Early development, “Pre-Alpha”)</h3>
+<p>We will create or transfer your repository to the GitHub Carpentries Lab organization where you will develop your lesson. We will provide you with our lesson template, and you will follow The Carpentries lesson development guidelines. During this initial development stage, your lesson will be in the “Pre-Alpha” stage.</p>
+<p>As lesson development progresses, you will report monthly to the Editor for your lesson. You will work with your handling Editor to set a date to teach the lesson for the first time. The Editor will provide general feedback on the content and structure of the lesson, and ensure that it is ready to be taught.</p>
+</div>
+<div id="the-sanding-field-test-alpha" class="section level3">
+<h3><span class="header-section-number">7.2.3</span> The sanding (field test, “Alpha”)</h3>
+<p>Once the lesson is ready to be taught for the first time, it will enter the “Alpha” stage. Field-testing a lesson is a good opportunity to receive and incorporate feedback from learners, Instructors, and Developers who can compare their expectations to the reality. The initial feedback gathered during the first time a lesson is taught is really important. The Carpentries Assessment Team will work with you to develop surveys to gather feedback from your learners, helpers, and instructors. The Curriculum Development Team and the Editor for the lesson will review the feedback with you, and help you decide how to incorporate this feedback in your lesson.</p>
+<p>The Carpentries Community Manager will make an announcement that a new “Alpha” lesson is available to contribute to and can be taught by instructors interested in early-adoption of the lesson.</p>
+<p>These early workshops are also a good time for Instructors not involved in the development process to teach these lessons. They can provide a fresh perspective and useful feedback on the content of the lessons.</p>
+<p>After a few iterations of teaching and integrating feedback (and at least 2 early workshop pilots), you will let the Carpentries Editor know that your lesson is ready to be reviewed. The Editor will select 2-3 reviewers within The Carpentries community with teaching experience and/or appropriate domain expertise, who will provide an open and friendly review of the lesson. After incorporating feedback and comments from the reviewers, your lesson will be badged “Reviewed by the Carpentries Community” and will be listed on our websites as such.</p>
+<p>During this process, you will have the possibility to include a short paper describing your lesson in the GitHub repository and have your lesson considered for publication in <a href="http://jose.theoj.org/">JOSE</a>, the Journal of Open Science Education. Once your lesson has gone through the peer-review process and has been approved by the Editor, we will create an official Zenodo release for it, and the lesson will enter the “Beta” stage.</p>
+</div>
+<div id="the-polishing-beta" class="section level3">
+<h3><span class="header-section-number">7.2.4</span> The polishing (“Beta”)</h3>
+<p>The “Beta” stage lasts approximately 6 months. During this time, members of The Carpentries community can teach it and contribute to the content of the lesson. Around the 4th month in this stage, you will organize a “Lesson Polishing” event (aka Bug BBQ). The main goal of this phase of the lesson development is to develop the documentation needed to ensure that people who have not contributed to the initial development efforts of the lesson have enough information to teach it effectively.</p>
+<p>After a final check from one of The Carpentries’ Editors, we will create a stable release for the lesson that will be listed on our website. Anyone in our community, including local Carpentries communities, will be able to use the lesson in their workshops or meetups.</p>
+</div>
+<div id="the-stable-lesson" class="section level3">
+<h3><span class="header-section-number">7.2.5</span> The stable lesson</h3>
+<p>T
+We will generate new releases every 6 months.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="technological-introductions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pilots-and-feedback.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/carpentries/curriculum-development/edit/master/07-lesson-life-cycle.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["curriculum-development-handbook.pdf", "curriculum-development-handbook.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
